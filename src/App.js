@@ -1,28 +1,26 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
 import './App.css';
-import {Provider} from 'react-redux'
-import Posts from './components/posts'
-import PostForm from './components/postsForm'
-
+import PostForm from './component/PostForm/PostForm';
+import Posts from './component/Posts/Posts';
 import store from './store'
-function App() {
-  return (
-    <Provider store ={store} >
-      <div className="App">
+class App extends Component {
+  render(){
+    return (
+      <Provider store ={store}>
+         <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
         </header>
         <PostForm />
         <hr />
         <Posts />
-      
+        
       </div>
-    </Provider>
-    
-  );
+      </Provider>
+     
+    );
+  }
+  
 }
 
 export default App;
